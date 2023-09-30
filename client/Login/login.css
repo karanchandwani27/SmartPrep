@@ -5,15 +5,10 @@
     /* color: rgb(175, 42, 175); */
 }
 .header__title{
-    color:  rgb(185, 52, 185);
+    color:  #5B0888;
+    font-family: 'Raleway', sans-serif;
 }
-.header__registered{
-    line-height: 1.5rem;
-    font-size: 1.25rem;
-    letter-spacing: 1px;
-    border-radius: 1rem;
-    padding: 1rem;
-}
+
 .container{
     display: flex;
     align-items: center;
@@ -25,7 +20,7 @@ display: block;
 form{
     padding: 1rem;
     padding-right: 1.5rem;
-    border-radius: 15px;
+    border-radius: 12px;
     font-size: 1rem;
     font-weight: 550;
     width: 18rem;
@@ -51,7 +46,8 @@ button{
     border-radius: 1rem;
     padding: 0.5rem 2rem ;
     margin-top: 1rem;
-    border: 2px solid  rgb(185, 52, 185);;
+    border: 2px solid  #E5CFF7;
+    border-radius: 50px;
     background-color: #E5CFF7;
     /* align-items: center; */
 }
@@ -61,7 +57,7 @@ button:hover{
 .submit{
     margin: 1rem auto ;
     display: flex;
-    color:  rgb(185, 52, 185);
+    color:  #5B0888;
     font-weight: 600;
     font-size: 1rem;
     /* border:1px solid bl */
@@ -72,7 +68,7 @@ button:hover{
 /* general classes */
 
 .bg-dark{
-    background-color: rgb(185, 52, 185);
+    background-color: #713ABE;
     color: white;
 }
 a{
@@ -80,4 +76,10 @@ a{
 }
 .text-center{
     text-align: center;
+}
+
+.bl{
+    /*bottom line*/
+    display: flex;
+    justify-content: center;
 }
