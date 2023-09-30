@@ -1,6 +1,7 @@
 body{
     margin:0;
-    color: white;
+    
+    border-radius: 50px;
     /* background-color: ; */
 }
 .header{
@@ -11,36 +12,43 @@ body{
     padding: 0 4rem;
     /* background-color: put; */
     /* color: rgb(175, 42, 175); */
-    border-bottom: 2px solid  rgb(185, 52, 185);
     /* position: fix; */
 }
 .header__title{
-    color:  rgb(185, 52, 185);
+    color:  #5B0888;
+    font-family: 'Raleway', sans-serif;
 }
 .header__registered{
     line-height: 1.5rem;
-    font-size: 1.25rem;
+    font-size: 20pxpx;
+    color: #fff
     letter-spacing: 1px;
     border-radius: 1rem;
     padding: 1rem;
     margin: 15px;
-    color: white;
+    
 }
 /* .container{
     display: flex;
     align-items: center;
     justify-content: center;
 } */
+
+
 .navbar a{
-    padding: 0.5rem 1rem;
-    background-color:rgb(245, 189, 245);
+    color: #5B0888;
+    font-size: 15px;
+    font-weight: 290;
     border-radius: 6px;
+    font-family: 'Raleway', sans-serif;
 }
 .navbar a:hover {
     cursor: pointer;
-    color: black;
+    
     transition: all 0.3s ease-out;
 }
+
+
 .row{
     position: relative;
     margin: 0 4rem;
@@ -50,19 +58,29 @@ body{
     position: absolute;
     top: 10%;
     font-size: 2rem;
-    color:rgb(185, 52, 185);
+    color:#5B0888;
 }
 .row h3{
     margin: 0;
     font-size: 3rem;
+    font-family: 'Raleway', sans-serif;
+}
+.aap{
+    /*aap aaye ho ekdum sahi platform pr*/
+    margin-top: 0;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
 }
 .col-9{
     /* background-image: url('../../Images/bg.png'); */
-    width: 75%;
+    width: 65%;
     margin-left:25% ;
 }
 .col-9 img{
-    margin-left: auto;
+    width: 700px;
+    height: 400px;
+    float: right;
+    
 }
 /* a:link{
     /* color: rgb(185, 52, 185); */
@@ -93,8 +111,9 @@ ul{
 /* Compulsory */
 /* general classes */
 .bg-dark{
-    background-color: rgb(185, 52, 185);
+    background-color: #5B0888;
     color: white;
+    border-radius: 50px;
 }
 a{
     text-decoration: none;
