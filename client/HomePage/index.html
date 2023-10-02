@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="checkLoggedIn()">
     <header class="header">
         <h1 class="header__title">SmartPrep</h1>
         <nav class="navbar">
@@ -95,4 +95,11 @@
     </div>
 </div>
 </body>
+<script>
+    function checkLoggedIn(){
+        if(sessionStorage.getItem('name')==""){
+            window.location.href = window.location.origin+'/SmartPrep/client/Login/login.html';
+        }
+    }
+</script>
 </html>

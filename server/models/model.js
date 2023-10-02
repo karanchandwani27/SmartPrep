@@ -11,12 +11,20 @@ const dataSchema = new mongoose.Schema({
     },
     test: {
         required: true,
-        type: String
+        type: Number
     },
     created_date: {
         required: true,
+        type: Date
+    },
+    email: {
+        required: false,
+        type: String
+    },
+    course: {
+        required: false,
         type: String
     }
 })
 
-module.exports = mongoose.model('Data', dataSchema)
+module.exports = mongoose.model('User', dataSchema)

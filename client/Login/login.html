@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
     <header class="header">
-        <h1 class="header__title"><a href="../HomePage/index.html">SmartPrep</h1>
+        <h1 class="header__title"><a href="../HomePage/index.html">SmartPrep</a></h1>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
     </header>
     <div class="container">
         <form action="" method="post" class="bg-dark">
@@ -24,12 +26,49 @@
                 <input type="password" name="Password" id="Password" required>
             </div>
             <div class="submit">
-                <button type="submit" class="submit" id="Submit">Submit</button>
+                <button type="submit" class="submit" id="Submit" onclick="onLogin()">Submit</button>
             </div>
         </form>
     </div>
     <div class="bl">
-    <h6><span style="font-size: 13px">Don't have an account?/</span><a href="../Register/register.html" class="reg_bl"><span style="color: #5B0888; font-size: 13px">Register here</span></a></h6></div>
+        <h6><span style="font-size: 13px">Don't have an account?/</span><a href="../Register/register.html"
+                class="reg_bl"><span style="color: #5B0888; font-size: 13px">Register here</span></a></h6>
+    </div>
 </body>
 <script src="login.js"></script>
+<script>
+    function onLogin() {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "email": document.getElementById('EmailId').value,
+            "password": document.getElementById('Password').value
+        });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:8081/getPassword", requestOptions)
+            .then(response => response.text())
+            .then(result =>{
+                if(JSON.parse(result)['status']==0){
+                    alert('User Not Found!');
+                }
+                if(JSON.parse(result)['status']==2){
+                    alert("Password Doesn't Matched");
+                }
+                if(JSON.parse(result)['status']==1){
+                    sessionStorage.setItem('name',JSON.parse(JSON.parse(result)['message'])['name']);
+                    window.location.href = window.location.origin+'/SmartPrep/client/HomePage/index.html';
+                }
+            })
+            .catch(error => console.log('error', error));
+    }
+</script>
+
 </html>
