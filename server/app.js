@@ -93,8 +93,20 @@ app.post('/registration', async function (req, res) {
 
 })
 
+const questionString = fs.readFileSync('./questions.json');
+const questionsArray = JSON.parse(questionString);
+
+app.get('/random', (req, res) => {
+    const randomQuestion = questionsArray[(Math.floor(Math.random() * questionsArray.length))].question;
+
+    return res.json({
+        "question": randomQuestion
+    });
+});
+
 var server = app.listen(8081, function () {
-    var host = server.address().address
-    var port = server.address().port
-    console.log("Example app listening at http://localhost", host, port)
+   var host = server.address().address
+   var port = server.address().port
+   console.log("Server listening at http://localhost", host, port)
+  
 })
